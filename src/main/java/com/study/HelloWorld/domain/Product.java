@@ -1,9 +1,6 @@
 package com.study.HelloWorld.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -15,6 +12,7 @@ import java.util.List;
 @ToString(exclude = "imageList")
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class Product {
 
     @Id
@@ -43,6 +41,10 @@ public class Product {
 
     public void changeName(String name){
         this.pname = name;
+    }
+
+    public void changeDel(boolean delFlag){
+        this.delFlag = delFlag;
     }
 
     public void addImage(ProductImage image){
